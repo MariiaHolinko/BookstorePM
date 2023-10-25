@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "1d20fb00-1c3f-4325-9a2f-ece866c4b355",
+		"name": "Account",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authorisation positiv",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f8a5c9e1-461c-4912-9fb9-d4faa997df2b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"true\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "5b46ef3a-52f9-4b31-9354-c66bad0f8502",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"Mahanya\",\r\n  \"password\": \"Vfhbz@26\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseURL}}Account/v1/Authorized"
+			},
+			"response": []
+		},
+		{
+			"name": "Authorisation negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f8a5c9e1-461c-4912-9fb9-d4faa997df2b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"true\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "9cd1bf5e-4da9-45cc-91b3-3a02e37d79e4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"Mahanya\",\r\n  \"password\": \"Vfhbz@26\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseURL}}Account/v1/Authorized"
+			},
+			"response": []
+		},
+		{
+			"name": "GenerateToken",
+			"id": "32badcff-f371-48b6-93d7-6101a5f56ee5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"Mahanya\",\r\n  \"password\": \"Vfhbz@26\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseURL}}Account/v1/GenerateToken"
+			},
+			"response": []
+		}
+	]
+}
