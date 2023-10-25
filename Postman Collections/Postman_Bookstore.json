@@ -95,10 +95,10 @@
 						"id": "9aad0e5f-ccd2-443c-83f3-24bb52c070b6",
 						"exec": [
 							" var jsonData = pm.response.json();\r",
-							" let status = jsonData.status\r",
-							" console.log(status)\r",
+							" let st = jsonData.status\r",
+							" console.log(st, typeof st)\r",
 							"pm.test(\"Check status\", function () {\r",
-							"    pm.expect(jsonData.status).to.eql('Success');\r",
+							"    pm.expect(st).to.eql('Success');\r",
 							"});"
 						],
 						"type": "text/javascript"
