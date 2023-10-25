@@ -94,12 +94,22 @@
 					"script": {
 						"id": "9aad0e5f-ccd2-443c-83f3-24bb52c070b6",
 						"exec": [
-							" var jsonData = pm.response.json();\r",
-							" let st = jsonData.status\r",
-							" console.log(st, typeof st)\r",
+							"let respBody = pm.response.json();\r",
+							"let st = respBody.status\r",
+							"    console.log(st, typeof st)\r",
+							"\r",
+							"let reqBody = JSON.parse(pm.request.body.raw);\r",
+							"let password = reqBody.password\r",
+							"    console.log(password, typeof password)\r",
 							"pm.test(\"Check status\", function () {\r",
 							"    pm.expect(st).to.eql('Success');\r",
-							"});"
+							"});\r",
+							"pm.test(\"Check length of password. Length = \" + password.length, function () {\r",
+							"    pm.expect(password).to.have.lengthOf.at.least(8).and.lengthOf.at.most(100)\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
 						],
 						"type": "text/javascript"
 					}
