@@ -88,6 +88,23 @@
 		},
 		{
 			"name": "GenerateToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9aad0e5f-ccd2-443c-83f3-24bb52c070b6",
+						"exec": [
+							" var jsonData = pm.response.json();\r",
+							" let status = jsonData.status\r",
+							" console.log(status)\r",
+							"pm.test(\"Check status\", function () {\r",
+							"    pm.expect(jsonData.status).to.eql('Success');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "32badcff-f371-48b6-93d7-6101a5f56ee5",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
