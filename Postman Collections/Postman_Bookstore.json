@@ -51,15 +51,16 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f8a5c9e1-461c-4912-9fb9-d4faa997df2b",
+						"id": "ae12b50a-4342-43a4-a7d2-74200667b224",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Body matches string\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"true\");\r",
-							"});"
+							"    pm.expect(pm.response.text()).to.include(\"User not found!\");\r",
+							"});\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -74,7 +75,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"userName\": \"Mahanya\",\r\n  \"password\": \"Vfhbz@26\"\r\n}",
+					"raw": "{\r\n  \"userName\": \"Maanya\",\r\n  \"password\": \"Vfhbz@26\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
